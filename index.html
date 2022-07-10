@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Clone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c0bb6b8fff.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <div class="header-background">
+            <img src="./assets/images/netflix-background.jpeg" alt="Background image">
+        </div>
+        <div class="header-overlay"></div>
+        <div class="logo-container">
+            <img class="logo"src="./assets/logos/logo.png" alt="Netflix Logo">
+        </div>
+        <nav class="header-menu">
+            <select class="header-menu-button  language-select" name="language" id="language">
+                    <option value="Français">Français</option>
+                    <option value="English">English</option>
+            </select>
+            <button class="header-menu-button login-button">
+                S'identifier
+            </button>
+        </nav>
+        <div class="header-content">
+            <h1 class="header-title">Films, séries TV et bien plus en illimité.</h1>
+            <h2 class="header-subtitle">Où que vous soyez. Annulez à tout moment.</h2>
+            <p class="header-text">Prêt à regarder Netflix ? Saisissez votre adresse e-mail pour vous abonner ou réactiver votre abonnement.</p>
+            <form class="header-form">
+                <input class="header-form-input" type="email" required>
+                <p class="placeholder">Adresse e-mail</p>
+                <button class="header-form-button">Commencer ></button>
+            </form>
+
+        </div>
+
+    </header>
+    
+    <script src="./app.js"></script>
+</body>
+</html>
