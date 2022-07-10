@@ -163,7 +163,7 @@ header {
     flex-shrink: 0;
 }
 
-@media screen and (max-width: 950px){
+@media screen and (max-width: 950px) and (orientation: portrait){
     .header-form {
         width: 95%;
         max-width: 350px;
@@ -182,7 +182,7 @@ header {
     }
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 500px) and (orientation: portrait) {
     
     header {
         height: 450px;
