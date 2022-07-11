@@ -38,6 +38,7 @@ languageSelection.forEach((select) => {
         const pickedLanguage = select.value;
         
         if(pickedLanguage === "Français"){
+            languageSelection.forEach((select) => select.value = "Français")
             loginButton.textContent = "S'identifier";
             headerTitle.textContent = "Films, séries TV et bien plus en illimité.";
             headerSubtitle.textContent = "Où que vous soyez. Annulez à tout moment.";
@@ -48,6 +49,7 @@ languageSelection.forEach((select) => {
             renderFooterLinks(footerItemsArr, linksTextsFr);
             
         } else if(pickedLanguage === "English"){
+            languageSelection.forEach((select) => select.value = "English")
             loginButton.textContent = "Sign In";
             headerTitle.textContent = "Unlimited movies, TV shows, and more.";
             headerSubtitle.textContent = "Watch anywhere. Cancel anytime.";
