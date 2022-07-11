@@ -240,6 +240,10 @@ footer {
     font-size: 15px;
 }
 
+.phone {
+    color: grey;
+}
+
 .footer-links-container {
     display: flex;
     flex-direction: row;
