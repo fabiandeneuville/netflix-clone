@@ -15,7 +15,6 @@ body {
 /* HEADER STYLE START */
 header {
     position: relative;
-    width: 100vw;
     height: 650px;
     border-bottom: 5px solid #333;
 }
@@ -231,8 +230,10 @@ header {
 /* FOOTER STYLE START */
 
 footer {
+    max-width: 900px;
     color: grey;
     padding: 70px 45px 30px;
+    margin: 0 auto;
 }
 
 .footer-text {
@@ -248,7 +249,7 @@ footer {
     display: flex;
     flex-direction: row;
     text-align: left;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
     margin: 0 auto;
