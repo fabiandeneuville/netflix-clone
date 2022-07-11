@@ -228,4 +228,37 @@ header {
 /* HEADER MEDIA QUERIES END */
 /* HEADER STYLE END */
 
+/* FOOTER STYLE START */
 
+footer {
+    color: grey;
+    padding: 70px 45px 0px;
+}
+
+.footer-text {
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+
+.footer-links-container {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: grey;
+    display: inline-block;
+    width: 200px;
+    text-align: left;
+    padding-right: 10px;
+    margin-bottom: 20px;
+    font-size: 12px;
+}
+
+/* FOOTER STYLE END */

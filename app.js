@@ -10,10 +10,31 @@ const headerFormButton = document.querySelector('.header-form-button');
 
 let email = "";
 
+// FOOTER ITEMS HANDLING
+const footerItems = document.querySelectorAll('.footer-link');
+const footerItemsArr = Array.from(footerItems);
+
+const linksTextsFr = [
+    'FAQ','Centre d\'aide','Compte','Presse','Relations Investisseurs','Recrutement','Utiliser des cartes cadeaux','Acheter des cartes cadeaux','Modes de lecture','Conditions d\'utilisation','Confidentialité','Préférences de cookies','Mentions légales','Nous contacter','Test de vitesse','Garantie légale','Informations légales','Seulement sur Netflix'
+];
+
+const linksTextsEn = [
+    'FAQ','Help Center','Account','Media Center','Investor Relations','Jobs','Redeem Gift Cards','Buy Gift Cards','Ways to Watch','Terms of Use','Privacy','Cookie Preferences','Corporate Information','Contact Us','Speed Test','Legal Guarantee','Legal Notices','Only on Netflix'
+];
+
+function renderFooterLinks(arrayOfLinks, arrayOfTexts){
+    for(let i = 0; i < arrayOfLinks.length; i ++){
+        arrayOfLinks[i].textContent = arrayOfTexts[i]
+    }
+}
+
+renderFooterLinks(footerItemsArr, linksTextsFr);
+
+
 languageSelection.addEventListener('change', () => {
-
+    
     const pickedLanguage = languageSelection.value;
-
+    
     if(pickedLanguage === "Français"){
         loginButton.textContent = "S'identifier";
         headerTitle.textContent = "Films, séries TV et bien plus en illimité.";
@@ -21,7 +42,8 @@ languageSelection.addEventListener('change', () => {
         headerText.textContent = "Prêt à regarder Netflix ? Saisissez votre adresse e-mail pour vous abonner ou réactiver votre abonnement.";
         emailInputPlaceholder.textContent = "Adresse email";
         headerFormButton.textContent = "Commencer >";
-
+        renderFooterLinks(footerItemsArr, linksTextsFr);
+        
     } else if(pickedLanguage === "English"){
         loginButton.textContent = "Sign In";
         headerTitle.textContent = "Unlimited movies, TV shows, and more.";
@@ -29,6 +51,7 @@ languageSelection.addEventListener('change', () => {
         headerText.textContent = "Ready to watch? Enter your email to create or restart your membership.";
         emailInputPlaceholder.textContent = "Email Address";
         headerFormButton.textContent = "Get Started >";
+        renderFooterLinks(footerItemsArr, linksTextsEn);
     }
 })
 
