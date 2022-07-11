@@ -7,6 +7,7 @@ const headerText = document.querySelector('.header-text');
 const emailInput = document.querySelector('.header-form-input');
 const emailInputPlaceholder = document.querySelector('.placeholder');
 const headerFormButton = document.querySelector('.header-form-button');
+const footerText = document.querySelector('.footer-text');
 
 let email = "";
 
@@ -43,6 +44,7 @@ languageSelection.forEach((select) => {
             headerText.textContent = "Prêt à regarder Netflix ? Saisissez votre adresse e-mail pour vous abonner ou réactiver votre abonnement.";
             emailInputPlaceholder.textContent = "Adresse email";
             headerFormButton.textContent = "Commencer >";
+            footerText.innerHTML = 'Des questions ? Appelez le <span class="phone">(+33) 0805-543-063</span>';
             renderFooterLinks(footerItemsArr, linksTextsFr);
             
         } else if(pickedLanguage === "English"){
@@ -52,6 +54,7 @@ languageSelection.forEach((select) => {
             headerText.textContent = "Ready to watch? Enter your email to create or restart your membership.";
             emailInputPlaceholder.textContent = "Email Address";
             headerFormButton.textContent = "Get Started >";
+            footerText.innerHTML = 'Questions? Call <span class="phone">(+33) 0805-543-063</span>';
             renderFooterLinks(footerItemsArr, linksTextsEn);
         }
     })
