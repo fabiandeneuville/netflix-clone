@@ -232,7 +232,7 @@ header {
 
 footer {
     color: grey;
-    padding: 70px 45px 0px;
+    padding: 70px 45px 30px;
 }
 
 .footer-text {
@@ -262,6 +262,14 @@ footer {
     text-align: left;
     padding-right: 10px;
     margin-bottom: 20px;
+    font-size: 12px;
+}
+
+.footer-language-select {
+    margin: 20px 0px;
+}
+
+.footer-country {
     font-size: 12px;
 }
 

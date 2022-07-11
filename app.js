@@ -1,4 +1,4 @@
-const languageSelection = document.querySelector('.language-select');
+const languageSelection = document.querySelectorAll('.language-select');
 
 const loginButton = document.querySelector('.login-button');
 const headerTitle = document.querySelector('.header-title');
@@ -30,29 +30,31 @@ function renderFooterLinks(arrayOfLinks, arrayOfTexts){
 
 renderFooterLinks(footerItemsArr, linksTextsFr);
 
-
-languageSelection.addEventListener('change', () => {
+// LANGUAGE SELECTION HANDLING
+languageSelection.forEach((select) => {
+    select.addEventListener('change', () => {
     
-    const pickedLanguage = languageSelection.value;
-    
-    if(pickedLanguage === "Français"){
-        loginButton.textContent = "S'identifier";
-        headerTitle.textContent = "Films, séries TV et bien plus en illimité.";
-        headerSubtitle.textContent = "Où que vous soyez. Annulez à tout moment.";
-        headerText.textContent = "Prêt à regarder Netflix ? Saisissez votre adresse e-mail pour vous abonner ou réactiver votre abonnement.";
-        emailInputPlaceholder.textContent = "Adresse email";
-        headerFormButton.textContent = "Commencer >";
-        renderFooterLinks(footerItemsArr, linksTextsFr);
+        const pickedLanguage = select.value;
         
-    } else if(pickedLanguage === "English"){
-        loginButton.textContent = "Sign In";
-        headerTitle.textContent = "Unlimited movies, TV shows, and more.";
-        headerSubtitle.textContent = "Watch anywhere. Cancel anytime.";
-        headerText.textContent = "Ready to watch? Enter your email to create or restart your membership.";
-        emailInputPlaceholder.textContent = "Email Address";
-        headerFormButton.textContent = "Get Started >";
-        renderFooterLinks(footerItemsArr, linksTextsEn);
-    }
+        if(pickedLanguage === "Français"){
+            loginButton.textContent = "S'identifier";
+            headerTitle.textContent = "Films, séries TV et bien plus en illimité.";
+            headerSubtitle.textContent = "Où que vous soyez. Annulez à tout moment.";
+            headerText.textContent = "Prêt à regarder Netflix ? Saisissez votre adresse e-mail pour vous abonner ou réactiver votre abonnement.";
+            emailInputPlaceholder.textContent = "Adresse email";
+            headerFormButton.textContent = "Commencer >";
+            renderFooterLinks(footerItemsArr, linksTextsFr);
+            
+        } else if(pickedLanguage === "English"){
+            loginButton.textContent = "Sign In";
+            headerTitle.textContent = "Unlimited movies, TV shows, and more.";
+            headerSubtitle.textContent = "Watch anywhere. Cancel anytime.";
+            headerText.textContent = "Ready to watch? Enter your email to create or restart your membership.";
+            emailInputPlaceholder.textContent = "Email Address";
+            headerFormButton.textContent = "Get Started >";
+            renderFooterLinks(footerItemsArr, linksTextsEn);
+        }
+    })
 })
 
 emailInput.addEventListener('focus', () => {
