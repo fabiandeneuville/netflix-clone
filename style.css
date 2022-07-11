@@ -1,3 +1,4 @@
+/* RESET */
 *, ::before, ::after {
     box-sizing: border-box;
     margin: 0;
@@ -5,10 +6,13 @@
     font-family: 'Roboto', sans-serif;
 }
 
+/* BODY STYLE START */
 body {
     background-color: black;
 }
+/* BODY STYLE END */
 
+/* HEADER STYLE START */
 header {
     position: relative;
     width: 100vw;
@@ -163,6 +167,7 @@ header {
     flex-shrink: 0;
 }
 
+/* HEADER MEDIA QUERIES START */
 @media screen and (max-width: 950px) {
     .header-form {
         width: 95%;
@@ -220,5 +225,7 @@ header {
         padding: 0 10px;
     }
 }
+/* HEADER MEDIA QUERIES END */
+/* HEADER STYLE END */
 
 
