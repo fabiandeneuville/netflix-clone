@@ -316,6 +316,12 @@ section {
     padding: 5px;
 }
 
+.download-icon {
+    height: 50px;
+    width: 50px;
+    margin: auto 0 auto auto;
+}
+
 .download-block-text-container {
     padding: 5px;
     display: flex;
