@@ -23,7 +23,7 @@ const linksTextsEn : string[] = [
     'FAQ','Help Center','Account','Media Center','Investor Relations','Jobs','Redeem Gift Cards','Buy Gift Cards','Ways to Watch','Terms of Use','Privacy','Cookie Preferences','Corporate Information','Contact Us','Speed Test','Legal Guarantee','Legal Notices','Only on Netflix'
 ];
 
-function renderFooterLinks(arrayOfLinks : HTMLAnchorElement[], arrayOfTexts : string[]){
+function renderFooterLinks(arrayOfLinks : HTMLAnchorElement[], arrayOfTexts : string[]) : void {
     for(let i = 0; i < arrayOfLinks.length; i ++){
         arrayOfLinks[i].textContent = arrayOfTexts[i]
     }
@@ -32,13 +32,13 @@ function renderFooterLinks(arrayOfLinks : HTMLAnchorElement[], arrayOfTexts : st
 renderFooterLinks(footerItemsArr, linksTextsFr);
 
 // LANGUAGE SELECTION HANDLING
-languageSelection.forEach((select) => {
+languageSelection.forEach(( select : HTMLSelectElement ) => {
     select.addEventListener('change', () => {
     
         const pickedLanguage = select.value;
         
         if(pickedLanguage === "Français"){
-            languageSelection.forEach((select) => select.value = "Français")
+            languageSelection.forEach((select : HTMLSelectElement) => select.value = "Français")
             loginButton.textContent = "S'identifier";
             headerTitle.textContent = "Films, séries TV et bien plus en illimité.";
             headerSubtitle.textContent = "Où que vous soyez. Annulez à tout moment.";
@@ -49,7 +49,7 @@ languageSelection.forEach((select) => {
             renderFooterLinks(footerItemsArr, linksTextsFr);
             
         } else if(pickedLanguage === "English"){
-            languageSelection.forEach((select) => select.value = "English")
+            languageSelection.forEach(( select : HTMLSelectElement ) => select.value = "English")
             loginButton.textContent = "Sign In";
             headerTitle.textContent = "Unlimited movies, TV shows, and more.";
             headerSubtitle.textContent = "Watch anywhere. Cancel anytime.";
