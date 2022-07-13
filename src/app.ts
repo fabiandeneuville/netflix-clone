@@ -62,6 +62,12 @@ function renderSectionTexts(arrayOfParagraphElements : HTMLParagraphElement[], a
 renderSectionTitles(sectionTitlesArr, sectionTitlesFr);
 renderSectionTexts(sectionTextsArr, sectionTextsFr);
 
+// HANDLING PICTURES
+
+const youthFr = document.querySelector('.youth-img-fr') as HTMLImageElement;
+const youthEn = document.querySelector('.youth-img-en') as HTMLImageElement;
+youthEn.style.display = "none"
+
 // FOOTER ITEMS HANDLING
 const footerItems = document.querySelectorAll('.footer-link') as NodeListOf<HTMLAnchorElement>;
 const footerItemsArr : HTMLAnchorElement[] = Array.from(footerItems);
@@ -97,6 +103,8 @@ languageSelection.forEach(( select : HTMLSelectElement ) => {
             emailInputPlaceholder.textContent = "Adresse email";
             headerFormButton.textContent = "Commencer >";
             downloadBlockStatus.textContent = "Téléchargement en cours...";
+            youthFr.style.display = "block";
+            youthEn.style.display = "none";
             renderSectionTitles(sectionTitlesArr, sectionTitlesFr);
             renderSectionTexts(sectionTextsArr, sectionTextsFr);
             footerText.innerHTML = 'Des questions ? Appelez le <span class="phone">(+33) 0805-543-063</span>';
@@ -111,6 +119,8 @@ languageSelection.forEach(( select : HTMLSelectElement ) => {
             emailInputPlaceholder.textContent = "Email Address";
             headerFormButton.textContent = "Get Started >";
             downloadBlockStatus.textContent = "Downloading...";
+            youthFr.style.display = "none";
+            youthEn.style.display = "block";
             renderSectionTitles(sectionTitlesArr, sectionTitlesEn);
             renderSectionTexts(sectionTextsArr, sectionTextsEn);
             footerText.innerHTML = 'Questions? Call <span class="phone">(+33) 0805-543-063</span>';
