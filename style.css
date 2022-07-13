@@ -283,6 +283,15 @@ section {
     transform: translate(-50%, -50%);
 }
 
+.devices-video {
+    z-index: -1;
+    position: absolute;
+    top:32%;
+    left:49.8%;
+    width: 60%;
+    transform: translate(-50%, -50%);
+}
+
 .download-block {
     display: flex;
     justify-content: space-between;
