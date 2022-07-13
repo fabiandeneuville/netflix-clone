@@ -227,6 +227,61 @@ header {
 /* HEADER MEDIA QUERIES END */
 /* HEADER STYLE END */
 
+/* MAIN STYLE START */
+
+section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-bottom: 5px solid #333;
+    padding: 50px;
+}
+
+.section-text-container {
+    width: 50%;
+    padding: 0 50px;
+}
+
+.section-heading {
+    font-size: 45px;
+    margin: 10px 0;
+}
+
+.section-text {
+    font-size: 25px;
+    margin: 10px 0;
+}
+
+.section-image-container {
+    position: relative;
+    display: block;
+    width: 50%;
+    padding: 0 50px;
+    overflow: hidden;
+}
+
+.section-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+@media screen and (max-width:950px) {
+    section {
+        flex-direction: column;
+    }
+    .section-text-container {
+        width: 100%;
+    }
+    .section-image-container {
+        width: 100%;
+    }
+}
+
+/* MAIN STYLE END */
+
 /* FOOTER STYLE START */
 
 footer {
