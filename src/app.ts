@@ -8,6 +8,7 @@ const emailInput = document.querySelector('.header-form-input') as HTMLInputElem
 const emailInputPlaceholder = document.querySelector('.placeholder') as HTMLParagraphElement;
 const headerFormButton = document.querySelector('.header-form-button') as HTMLButtonElement;
 const footerText = document.querySelector('.footer-text') as HTMLParagraphElement;
+const downloadBlockStatus = document.querySelector('.download-block-status') as HTMLParagraphElement;
 
 let email : string = "";
 
@@ -95,6 +96,7 @@ languageSelection.forEach(( select : HTMLSelectElement ) => {
             headerText.textContent = "Prêt à regarder Netflix ? Saisissez votre adresse e-mail pour vous abonner ou réactiver votre abonnement.";
             emailInputPlaceholder.textContent = "Adresse email";
             headerFormButton.textContent = "Commencer >";
+            downloadBlockStatus.textContent = "Téléchargement en cours...";
             renderSectionTitles(sectionTitlesArr, sectionTitlesFr);
             renderSectionTexts(sectionTextsArr, sectionTextsFr);
             footerText.innerHTML = 'Des questions ? Appelez le <span class="phone">(+33) 0805-543-063</span>';
@@ -108,6 +110,7 @@ languageSelection.forEach(( select : HTMLSelectElement ) => {
             headerText.textContent = "Ready to watch? Enter your email to create or restart your membership.";
             emailInputPlaceholder.textContent = "Email Address";
             headerFormButton.textContent = "Get Started >";
+            downloadBlockStatus.textContent = "Downloading...";
             renderSectionTitles(sectionTitlesArr, sectionTitlesEn);
             renderSectionTexts(sectionTextsArr, sectionTextsEn);
             footerText.innerHTML = 'Questions? Call <span class="phone">(+33) 0805-543-063</span>';

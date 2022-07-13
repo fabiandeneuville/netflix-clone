@@ -9,6 +9,7 @@
 /* BODY STYLE START */
 body {
     background-color: black;
+    min-width: 300px;
 }
 /* BODY STYLE END */
 
@@ -241,6 +242,7 @@ section {
 
 .section-text-container {
     width: 50%;
+    max-width: 500px;
     padding: 0 50px;
 }
 
@@ -260,6 +262,7 @@ section {
     position: relative;
     display: block;
     width: 50%;
+    max-width: 500px;
     padding: 0 10px;
     overflow: hidden;
 }
@@ -270,19 +273,44 @@ section {
     object-fit: cover;
 }
 
-.animated-block {
+.download-block {
     display: flex;
+    justify-content: space-between;
     position: absolute;
     bottom: 7%;
     left: 50%;
     transform: translateX(-50%);
+    padding: 5px;
     margin: 0 auto;
     width: 80%;
     max-width: 500px;
-    height: 20%;
+    height: 30%;
     border: 2px solid #333;
     background: black;
     border-radius: 10px;
+}
+
+.download-block-image {
+    display: block;
+    height: 100%;
+    width: auto;
+    padding: 5px;
+}
+
+.download-block-text-container {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.download-block-title {
+    font-size: 14px;
+}
+.download-block-status {
+    font-size: 12px;
+    color: #0071eb;
 }
 
 @media screen and (max-width:950px) {
