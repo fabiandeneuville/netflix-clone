@@ -247,11 +247,13 @@ section {
 .section-heading {
     font-size: 45px;
     margin: 10px 0;
+    font-weight: 500;
 }
 
 .section-text {
     font-size: 25px;
     margin: 10px 0;
+    font-weight: 300;
 }
 
 .section-image-container {
@@ -275,8 +277,29 @@ section {
     .section-text-container {
         width: 100%;
     }
+    .section-heading {
+        text-align: center;
+    }
+    .section-text {
+        text-align: center;
+    }
     .section-image-container {
         width: 100%;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .section-text-container {
+        padding: 0;
+    }
+    .section-heading {
+        font-size: 25px;
+    }
+    .section-text {
+        font-size: 20px;
+    }
+    .section-image-container {
+        padding: 0;
     }
 }
 
