@@ -1,20 +1,13 @@
 "use strict";
-const languageSelection = document.querySelectorAll('.language-select');
-const loginButton = document.querySelector('.login-button');
-const headerTitle = document.querySelector('.header-title');
-const headerSubtitle = document.querySelector('.header-subtitle');
-const headerText = document.querySelector('.header-text');
-const emailInput = document.querySelector('.header-form-input');
-const emailInputPlaceholder = document.querySelector('.placeholder');
-const headerFormButton = document.querySelector('.header-form-button');
-const footerText = document.querySelector('.footer-text');
-const downloadBlockStatus = document.querySelector('.download-block-status');
-let email = "";
-// SECTION TEXTS HANDLING 
-const sectionTitles = document.querySelectorAll('.section-heading');
-const sectionTexts = document.querySelectorAll('.section-text');
-const sectionTitlesArr = Array.from(sectionTitles);
-const sectionTextsArr = Array.from(sectionTexts);
+/******************** DATAS ********************/
+/********** HEADER DATAS **********/
+const headerTextsFr = [
+    "S'identifier", "Films, séries TV et bien plus en illimité.", "Où que vous soyez. Annulez à tout moment.", "Prêt à regarder Netflix ? Saisissez votre adresse e-mail pour vous abonner ou réactiver votre abonnement.", "Adresse email", "Commencer >"
+];
+const headerTextsEn = [
+    "Sign In", "Unlimited movies, TV shows, and more.", "Watch anywhere. Cancel anytime.", "Ready to watch? Enter your email to create or restart your membership.", "Email Address", "Get Started >"
+];
+/********** SECTION DATAS **********/
 const sectionTitlesFr = [
     'Regardez Netflix sur votre TV.',
     'Téléchargez vos séries préférées pour les regarder hors connexion.',
@@ -39,6 +32,53 @@ const sectionTextsEn = [
     'Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV without paying more.',
     'Send kids on adventures with their favorite characters in a space made just for them—free with your membership.'
 ];
+/********** FOOTER DATAS **********/
+const linksTextsFr = [
+    'FAQ', 'Centre d\'aide', 'Compte', 'Presse', 'Relations Investisseurs', 'Recrutement', 'Utiliser des cartes cadeaux', 'Acheter des cartes cadeaux', 'Modes de lecture', 'Conditions d\'utilisation', 'Confidentialité', 'Préférences de cookies', 'Mentions légales', 'Nous contacter', 'Test de vitesse', 'Garantie légale', 'Informations légales', 'Seulement sur Netflix'
+];
+const linksTextsEn = [
+    'FAQ', 'Help Center', 'Account', 'Media Center', 'Investor Relations', 'Jobs', 'Redeem Gift Cards', 'Buy Gift Cards', 'Ways to Watch', 'Terms of Use', 'Privacy', 'Cookie Preferences', 'Corporate Information', 'Contact Us', 'Speed Test', 'Legal Guarantee', 'Legal Notices', 'Only on Netflix'
+];
+/******************** DOM ELEMENTS SELECTION ********************/
+/********** HEADER **********/
+const languageSelection = document.querySelectorAll('.language-select');
+const loginButton = document.querySelector('.login-button');
+const headerTitle = document.querySelector('.header-title');
+const headerSubtitle = document.querySelector('.header-subtitle');
+const headerText = document.querySelector('.header-text');
+/********** HEADER FORM **********/
+const emailInput = document.querySelector('.header-form-input');
+const emailInputPlaceholder = document.querySelector('.placeholder');
+const headerFormButton = document.querySelector('.header-form-button');
+const downloadBlockStatus = document.querySelector('.download-block-status');
+/********** SECTIONS **********/
+const sectionTitles = document.querySelectorAll('.section-heading');
+const sectionTexts = document.querySelectorAll('.section-text');
+const sectionTitlesArr = Array.from(sectionTitles);
+const sectionTextsArr = Array.from(sectionTexts);
+const youthFr = document.querySelector('.youth-img-fr');
+const youthEn = document.querySelector('.youth-img-en');
+/********** FOOTER **********/
+const footerText = document.querySelector('.footer-text');
+const footerItems = document.querySelectorAll('.footer-link');
+const footerItemsArr = Array.from(footerItems);
+/******************** VARIABLES ********************/
+let email = "";
+/******************** CONTENT RENDERING ********************/
+youthEn.style.display = "none";
+renderHeaderContent(headerTextsFr);
+renderSectionTitles(sectionTitlesArr, sectionTitlesFr);
+renderSectionTexts(sectionTextsArr, sectionTextsFr);
+renderFooterLinks(footerItemsArr, linksTextsFr);
+/******************** FUNCTIONS ********************/
+function renderHeaderContent(array) {
+    loginButton.textContent = array[0];
+    headerTitle.textContent = array[1];
+    headerSubtitle.textContent = array[2];
+    headerText.textContent = array[3];
+    emailInputPlaceholder.textContent = array[4];
+    headerFormButton.textContent = array[5];
+}
 function renderSectionTitles(arrayOfHeadingElements, arrayOfTitles) {
     for (let i = 0; i < arrayOfHeadingElements.length; i++) {
         arrayOfHeadingElements[i].textContent = arrayOfTitles[i];
@@ -50,39 +90,18 @@ function renderSectionTexts(arrayOfParagraphElements, arrayOfTexts) {
         arrayOfParagraphElements[i].textContent = arrayOfTexts[i];
     }
 }
-renderSectionTitles(sectionTitlesArr, sectionTitlesFr);
-renderSectionTexts(sectionTextsArr, sectionTextsFr);
-// HANDLING PICTURES
-const youthFr = document.querySelector('.youth-img-fr');
-const youthEn = document.querySelector('.youth-img-en');
-youthEn.style.display = "none";
-// FOOTER ITEMS HANDLING
-const footerItems = document.querySelectorAll('.footer-link');
-const footerItemsArr = Array.from(footerItems);
-const linksTextsFr = [
-    'FAQ', 'Centre d\'aide', 'Compte', 'Presse', 'Relations Investisseurs', 'Recrutement', 'Utiliser des cartes cadeaux', 'Acheter des cartes cadeaux', 'Modes de lecture', 'Conditions d\'utilisation', 'Confidentialité', 'Préférences de cookies', 'Mentions légales', 'Nous contacter', 'Test de vitesse', 'Garantie légale', 'Informations légales', 'Seulement sur Netflix'
-];
-const linksTextsEn = [
-    'FAQ', 'Help Center', 'Account', 'Media Center', 'Investor Relations', 'Jobs', 'Redeem Gift Cards', 'Buy Gift Cards', 'Ways to Watch', 'Terms of Use', 'Privacy', 'Cookie Preferences', 'Corporate Information', 'Contact Us', 'Speed Test', 'Legal Guarantee', 'Legal Notices', 'Only on Netflix'
-];
 function renderFooterLinks(arrayOfLinks, arrayOfTexts) {
     for (let i = 0; i < arrayOfLinks.length; i++) {
         arrayOfLinks[i].textContent = arrayOfTexts[i];
     }
 }
-renderFooterLinks(footerItemsArr, linksTextsFr);
-// LANGUAGE SELECTION HANDLING
+/******************** LANGUAGE SETTING FUNCTION ********************/
 languageSelection.forEach((select) => {
     select.addEventListener('change', () => {
         const pickedLanguage = select.value;
         if (pickedLanguage === "Français") {
             languageSelection.forEach((select) => select.value = "Français");
-            loginButton.textContent = "S'identifier";
-            headerTitle.textContent = "Films, séries TV et bien plus en illimité.";
-            headerSubtitle.textContent = "Où que vous soyez. Annulez à tout moment.";
-            headerText.textContent = "Prêt à regarder Netflix ? Saisissez votre adresse e-mail pour vous abonner ou réactiver votre abonnement.";
-            emailInputPlaceholder.textContent = "Adresse email";
-            headerFormButton.textContent = "Commencer >";
+            renderHeaderContent(headerTextsFr);
             downloadBlockStatus.textContent = "Téléchargement en cours...";
             youthFr.style.display = "block";
             youthEn.style.display = "none";
@@ -93,12 +112,7 @@ languageSelection.forEach((select) => {
         }
         else if (pickedLanguage === "English") {
             languageSelection.forEach((select) => select.value = "English");
-            loginButton.textContent = "Sign In";
-            headerTitle.textContent = "Unlimited movies, TV shows, and more.";
-            headerSubtitle.textContent = "Watch anywhere. Cancel anytime.";
-            headerText.textContent = "Ready to watch? Enter your email to create or restart your membership.";
-            emailInputPlaceholder.textContent = "Email Address";
-            headerFormButton.textContent = "Get Started >";
+            renderHeaderContent(headerTextsEn);
             downloadBlockStatus.textContent = "Downloading...";
             youthFr.style.display = "none";
             youthEn.style.display = "block";
@@ -109,6 +123,7 @@ languageSelection.forEach((select) => {
         }
     });
 });
+/******************** EMAIL INPUT LISTENERS ********************/
 emailInput.addEventListener('focus', () => {
     emailInputPlaceholder.classList.add('focusedInput');
 });
