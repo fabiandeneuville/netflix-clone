@@ -33,8 +33,28 @@ const sectionTextsEn : string[] = [
     'Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV without paying more.',
     'Send kids on adventures with their favorite characters in a space made just for them—free with your membership.'
 ];
-/********** FOOTER DATAS **********/
 
+/********** FAQ DATAS **********/
+const faqTitleFr : string = "Foire aux questions";
+const faqTitleEn : string = "Frequently Asked Questions";
+const faqItemsTitlesFr : string[] = [
+    "Netflix, qu'est-ce que c'est ?",
+    "Combien coûte Netflix ?",
+    "Où puis-je regarder Netflix ?",
+    "Comment puis-je annuler mon forfait ?",
+    "Que puis-je regarder sur Netflix ?",
+    "Est-ce aue Netflix est adapté aux enfants ?"
+]
+const faqItemsTitlesEn : string[] = [
+    "What is Netflix ?",
+    "How much does Netflix cost?",
+    "Where can I watch?",
+    "How do I cancel?",
+    "What can I watch on Netflix?",
+    "Is Netflix good for kids?"
+]
+
+/********** FOOTER DATAS **********/
 const linksTextsFr : string[] = [
     'FAQ','Centre d\'aide','Compte','Presse','Relations Investisseurs','Recrutement','Utiliser des cartes cadeaux','Acheter des cartes cadeaux','Modes de lecture','Conditions d\'utilisation','Confidentialité','Préférences de cookies','Mentions légales','Nous contacter','Test de vitesse','Garantie légale','Informations légales','Seulement sur Netflix'
 ];
@@ -62,6 +82,10 @@ const sectionTitlesArr : HTMLHeadingElement[] = Array.from(sectionTitles);
 const sectionTextsArr : HTMLParagraphElement[] = Array.from(sectionTexts);
 const youthFr = document.querySelector('.youth-img-fr') as HTMLImageElement;
 const youthEn = document.querySelector('.youth-img-en') as HTMLImageElement;
+/********** FAQ **********/
+const faqTitle = document.querySelector('.faq-title') as HTMLHeadingElement;
+const faqItemsTitlesList = document.querySelectorAll('.faq-item-title') as NodeListOf<HTMLHeadingElement>;
+const faqItemsTitlesArr : HTMLHeadingElement[] = Array.from(faqItemsTitlesList);
 /********** FOOTER **********/
 const footerText = document.querySelector('.footer-text') as HTMLParagraphElement;
 const footerItems = document.querySelectorAll('.footer-link') as NodeListOf<HTMLAnchorElement>;
@@ -77,6 +101,7 @@ youthEn.style.display = "none"
 renderHeaderContent(headerTextsFr)
 renderSectionTitles(sectionTitlesArr, sectionTitlesFr);
 renderSectionTexts(sectionTextsArr, sectionTextsFr);
+renderFaqTitles(faqItemsTitlesArr, faqItemsTitlesFr, faqTitleFr);
 renderFooterLinks(footerItemsArr, linksTextsFr);
 
 /******************** FUNCTIONS ********************/
@@ -102,6 +127,13 @@ function renderSectionTexts(arrayOfParagraphElements : HTMLParagraphElement[], a
     }
 }
 
+function renderFaqTitles(arrayOfElements : HTMLHeadingElement[], arrayOfTitles : string[], title : string) : void {
+    faqTitle.textContent = title;
+    for(let i = 0 ; i < arrayOfElements.length ; i++){
+        arrayOfElements[i].textContent = arrayOfTitles[i]
+    }
+}
+
 function renderFooterLinks(arrayOfLinks : HTMLAnchorElement[], arrayOfTexts : string[]) : void {
     for(let i = 0; i < arrayOfLinks.length; i ++){
         arrayOfLinks[i].textContent = arrayOfTexts[i]
@@ -123,6 +155,7 @@ languageSelection.forEach(( select : HTMLSelectElement ) => {
             youthEn.style.display = "none";
             renderSectionTitles(sectionTitlesArr, sectionTitlesFr);
             renderSectionTexts(sectionTextsArr, sectionTextsFr);
+            renderFaqTitles(faqItemsTitlesArr, faqItemsTitlesFr, faqTitleFr);
             footerText.innerHTML = 'Des questions ? Appelez le <span class="phone">(+33) 0805-543-063</span>';
             renderFooterLinks(footerItemsArr, linksTextsFr);
             
@@ -134,6 +167,7 @@ languageSelection.forEach(( select : HTMLSelectElement ) => {
             youthEn.style.display = "block";
             renderSectionTitles(sectionTitlesArr, sectionTitlesEn);
             renderSectionTexts(sectionTextsArr, sectionTextsEn);
+            renderFaqTitles(faqItemsTitlesArr, faqItemsTitlesEn, faqTitleEn);
             footerText.innerHTML = 'Questions? Call <span class="phone">(+33) 0805-543-063</span>';
             renderFooterLinks(footerItemsArr, linksTextsEn);
         }

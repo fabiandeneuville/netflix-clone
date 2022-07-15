@@ -32,6 +32,25 @@ const sectionTextsEn = [
     'Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV without paying more.',
     'Send kids on adventures with their favorite characters in a space made just for them—free with your membership.'
 ];
+/********** FAQ DATAS **********/
+const faqTitleFr = "Foire aux questions";
+const faqTitleEn = "Frequently Asked Questions";
+const faqItemsTitlesFr = [
+    "Netflix, qu'est-ce que c'est ?",
+    "Combien coûte Netflix ?",
+    "Où puis-je regarder Netflix ?",
+    "Comment puis-je annuler mon forfait ?",
+    "Que puis-je regarder sur Netflix ?",
+    "Est-ce aue Netflix est adapté aux enfants ?"
+];
+const faqItemsTitlesEn = [
+    "What is Netflix ?",
+    "How much does Netflix cost?",
+    "Where can I watch?",
+    "How do I cancel?",
+    "What can I watch on Netflix?",
+    "Is Netflix good for kids?"
+];
 /********** FOOTER DATAS **********/
 const linksTextsFr = [
     'FAQ', 'Centre d\'aide', 'Compte', 'Presse', 'Relations Investisseurs', 'Recrutement', 'Utiliser des cartes cadeaux', 'Acheter des cartes cadeaux', 'Modes de lecture', 'Conditions d\'utilisation', 'Confidentialité', 'Préférences de cookies', 'Mentions légales', 'Nous contacter', 'Test de vitesse', 'Garantie légale', 'Informations légales', 'Seulement sur Netflix'
@@ -58,6 +77,10 @@ const sectionTitlesArr = Array.from(sectionTitles);
 const sectionTextsArr = Array.from(sectionTexts);
 const youthFr = document.querySelector('.youth-img-fr');
 const youthEn = document.querySelector('.youth-img-en');
+/********** FAQ **********/
+const faqTitle = document.querySelector('.faq-title');
+const faqItemsTitlesList = document.querySelectorAll('.faq-item-title');
+const faqItemsTitlesArr = Array.from(faqItemsTitlesList);
 /********** FOOTER **********/
 const footerText = document.querySelector('.footer-text');
 const footerItems = document.querySelectorAll('.footer-link');
@@ -69,6 +92,7 @@ youthEn.style.display = "none";
 renderHeaderContent(headerTextsFr);
 renderSectionTitles(sectionTitlesArr, sectionTitlesFr);
 renderSectionTexts(sectionTextsArr, sectionTextsFr);
+renderFaqTitles(faqItemsTitlesArr, faqItemsTitlesFr, faqTitleFr);
 renderFooterLinks(footerItemsArr, linksTextsFr);
 /******************** FUNCTIONS ********************/
 function renderHeaderContent(array) {
@@ -90,6 +114,12 @@ function renderSectionTexts(arrayOfParagraphElements, arrayOfTexts) {
         arrayOfParagraphElements[i].textContent = arrayOfTexts[i];
     }
 }
+function renderFaqTitles(arrayOfElements, arrayOfTitles, title) {
+    faqTitle.textContent = title;
+    for (let i = 0; i < arrayOfElements.length; i++) {
+        arrayOfElements[i].textContent = arrayOfTitles[i];
+    }
+}
 function renderFooterLinks(arrayOfLinks, arrayOfTexts) {
     for (let i = 0; i < arrayOfLinks.length; i++) {
         arrayOfLinks[i].textContent = arrayOfTexts[i];
@@ -107,6 +137,7 @@ languageSelection.forEach((select) => {
             youthEn.style.display = "none";
             renderSectionTitles(sectionTitlesArr, sectionTitlesFr);
             renderSectionTexts(sectionTextsArr, sectionTextsFr);
+            renderFaqTitles(faqItemsTitlesArr, faqItemsTitlesFr, faqTitleFr);
             footerText.innerHTML = 'Des questions ? Appelez le <span class="phone">(+33) 0805-543-063</span>';
             renderFooterLinks(footerItemsArr, linksTextsFr);
         }
@@ -118,6 +149,7 @@ languageSelection.forEach((select) => {
             youthEn.style.display = "block";
             renderSectionTitles(sectionTitlesArr, sectionTitlesEn);
             renderSectionTexts(sectionTextsArr, sectionTextsEn);
+            renderFaqTitles(faqItemsTitlesArr, faqItemsTitlesEn, faqTitleEn);
             footerText.innerHTML = 'Questions? Call <span class="phone">(+33) 0805-543-063</span>';
             renderFooterLinks(footerItemsArr, linksTextsEn);
         }
